@@ -1,3 +1,4 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 * {
@@ -13,19 +14,19 @@ body {
 }
 
 .wrap {
-  max-width: 480px;
-  margin: 0 auto;
+  width: 100%;
+  min-height: 100vh;
   background: #ffffff;
-  border-radius: 12px;
-  overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 .slide {
   display: none;
-  padding: 1.2rem 1rem 5rem;
-  min-height: 500px;
+  padding: 1.4rem 1.1rem 6rem;
   flex-direction: column;
-  gap: 0.7rem;
+  gap: 0.8rem;
+  flex: 1;
 }
 
 .slide.active {
@@ -33,7 +34,7 @@ body {
 }
 
 .tag {
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 500;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -41,16 +42,16 @@ body {
 }
 
 .stitle {
-  font-size: 17px;
+  font-size: 18px;
   font-weight: 600;
   color: #1f1f1f;
   line-height: 1.5;
   border-bottom: 1px solid #eee;
-  padding-bottom: 0.7rem;
+  padding-bottom: 0.8rem;
 }
 
 .body {
-  font-size: 13.5px;
+  font-size: 14px;
   color: #444;
   line-height: 1.85;
 }
@@ -59,32 +60,32 @@ body {
   background: #f7f7fb;
   border-left: 3px solid #b8b5d6;
   border-radius: 0 8px 8px 0;
-  padding: 0.9rem 1rem;
+  padding: 1rem;
   display: flex;
   flex-direction: column;
-  gap: 0.4rem;
+  gap: 0.5rem;
 }
 
 .ayat .arab {
-  font-size: 17px;
+  font-size: 20px;
   color: #2b2b2b;
   font-weight: 500;
   text-align: right;
   direction: rtl;
-  line-height: 1.9;
+  line-height: 2;
 }
 
 .ayat .latin {
-  font-size: 12px;
+  font-size: 12.5px;
   color: #666;
   font-style: italic;
   line-height: 1.6;
 }
 
 .ayat .terjemah {
-  font-size: 12.5px;
+  font-size: 13px;
   color: #555;
-  line-height: 1.7;
+  line-height: 1.75;
 }
 
 .ayat .sumber {
@@ -96,14 +97,14 @@ body {
   background: #f4f8f7;
   border-left: 3px solid #9bbfb6;
   border-radius: 0 8px 8px 0;
-  padding: 0.9rem 1rem;
+  padding: 1rem;
   display: flex;
   flex-direction: column;
-  gap: 0.4rem;
+  gap: 0.5rem;
 }
 
 .hadis .isi {
-  font-size: 13px;
+  font-size: 13.5px;
   color: #444;
   font-style: italic;
   line-height: 1.8;
@@ -117,21 +118,21 @@ body {
 .hl {
   background: #f3f4f8;
   border-radius: 10px;
-  padding: 0.9rem 1rem;
+  padding: 1rem;
 }
 
 .hl p {
-  font-size: 13.5px;
+  font-size: 14px;
   color: #3a3a3a;
   line-height: 1.8;
   font-weight: 500;
 }
 
 .sub {
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 600;
   color: #222;
-  margin-top: 0.4rem;
+  margin-top: 0.3rem;
 }
 
 .plist {
@@ -145,7 +146,7 @@ body {
   display: flex;
   align-items: flex-start;
   gap: 9px;
-  font-size: 13px;
+  font-size: 13.5px;
   color: #444;
   line-height: 1.8;
 }
@@ -156,7 +157,7 @@ body {
   border-radius: 50%;
   background: #a8a6c9;
   flex-shrink: 0;
-  margin-top: 6px;
+  margin-top: 7px;
 }
 
 .dot-teal {
@@ -164,26 +165,29 @@ body {
 }
 
 .nav {
-  position: sticky;
+  position: fixed;
   bottom: 0;
+  left: 0;
+  right: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.8rem 1rem;
+  padding: 0.85rem 1.1rem;
   border-top: 1px solid #eee;
   background: #fafafa;
+  z-index: 999;
 }
 
 .nbtn {
   background: #ffffff;
   border: 1px solid #ddd;
   border-radius: 8px;
-  padding: 6px 14px;
-  font-size: 12px;
+  padding: 7px 16px;
+  font-size: 13px;
   color: #333;
   cursor: pointer;
   font-family: 'Poppins', sans-serif;
-  transition: all 0.2s ease;
+  transition: background 0.2s ease;
 }
 
 .nbtn:hover {
@@ -202,8 +206,8 @@ body {
 }
 
 .pip {
-  width: 5px;
-  height: 5px;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
   background: #ddd;
   transition: all 0.2s;
@@ -211,12 +215,12 @@ body {
 
 .pip.on {
   background: #a8a6c9;
-  width: 16px;
+  width: 18px;
   border-radius: 3px;
 }
 
 .snum {
-  font-size: 11px;
+  font-size: 12px;
   color: #888;
 }
 </style>
