@@ -1,225 +1,223 @@
 <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-*{
-  box-sizing:border-box;
-  margin:0;
-  padding:0
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-body{
-  background:#f5f7f6;
-  color:#2e2e2e;
-}
-
-.wrap{
+body {
   font-family: 'Poppins', sans-serif;
-  max-width:820px;
-  margin:40px auto;
-  background:#ffffff;
-  border-radius:14px;
-  box-shadow:0 8px 30px rgba(0,0,0,0.05);
-  overflow:hidden;
+  background: #f5f7f6;
+  color: #2e2e2e;
 }
 
-.slide{
-  display:none;
-  padding:2.2rem 2rem;
-  min-height:560px;
-  flex-direction:column;
-  justify-content:flex-start;
+.wrap {
+  max-width: 480px;
+  margin: 0 auto;
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
 }
 
-.slide.active{
-  display:flex
+.slide {
+  display: none;
+  padding: 1.2rem 1rem 5rem;
+  min-height: 500px;
+  flex-direction: column;
+  gap: 0.7rem;
 }
 
-.tag{
-  font-size:11px;
-  font-weight:500;
-  letter-spacing:.08em;
-  text-transform:uppercase;
-  color:#9aa0a6;
-  margin-bottom:.8rem;
+.slide.active {
+  display: flex;
 }
 
-.stitle{
-  font-size:22px;
-  font-weight:600;
-  color:#1f1f1f;
-  margin-bottom:1rem;
-  line-height:1.5;
+.tag {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #9aa0a6;
 }
 
-.body{
-  font-size:15px;
-  color:#444;
-  line-height:1.9;
-  margin-bottom:1rem;
+.stitle {
+  font-size: 17px;
+  font-weight: 600;
+  color: #1f1f1f;
+  line-height: 1.5;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 0.7rem;
 }
 
-.ayat{
-  background:#f7f7fb;
-  border-left:3px solid #b8b5d6;
-  border-radius:8px;
-  padding:1rem 1.1rem;
-  margin:1rem 0;
+.body {
+  font-size: 13.5px;
+  color: #444;
+  line-height: 1.85;
 }
 
-.ayat .arab{
-  font-size:18px;
-  color:#2b2b2b;
-  font-weight:500;
-  text-align:right;
-  direction:rtl;
-  margin-bottom:.5rem;
-  line-height:1.8;
+.ayat {
+  background: #f7f7fb;
+  border-left: 3px solid #b8b5d6;
+  border-radius: 0 8px 8px 0;
+  padding: 0.9rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
 }
 
-.ayat .latin{
-  font-size:13px;
-  color:#666;
-  font-style:italic;
-  margin-bottom:.3rem;
-  line-height:1.6;
+.ayat .arab {
+  font-size: 17px;
+  color: #2b2b2b;
+  font-weight: 500;
+  text-align: right;
+  direction: rtl;
+  line-height: 1.9;
 }
 
-.ayat .terjemah{
-  font-size:13.5px;
-  color:#555;
-  line-height:1.7;
+.ayat .latin {
+  font-size: 12px;
+  color: #666;
+  font-style: italic;
+  line-height: 1.6;
 }
 
-.ayat .sumber{
-  font-size:11px;
-  color:#999;
-  margin-top:.4rem;
+.ayat .terjemah {
+  font-size: 12.5px;
+  color: #555;
+  line-height: 1.7;
 }
 
-.hadis{
-  background:#f4f8f7;
-  border-left:3px solid #9bbfb6;
-  border-radius:8px;
-  padding:1rem 1.1rem;
-  margin:1rem 0;
+.ayat .sumber {
+  font-size: 11px;
+  color: #999;
 }
 
-.hadis .isi{
-  font-size:14px;
-  color:#444;
-  font-style:italic;
-  line-height:1.8;
+.hadis {
+  background: #f4f8f7;
+  border-left: 3px solid #9bbfb6;
+  border-radius: 0 8px 8px 0;
+  padding: 0.9rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
 }
 
-.hadis .sumber{
-  font-size:11px;
-  color:#999;
-  margin-top:.4rem;
+.hadis .isi {
+  font-size: 13px;
+  color: #444;
+  font-style: italic;
+  line-height: 1.8;
 }
 
-.hl{
-  background:#f3f4f8;
-  border-radius:10px;
-  padding:1rem 1.2rem;
-  margin:1rem 0;
+.hadis .sumber {
+  font-size: 11px;
+  color: #999;
 }
 
-.hl p{
-  font-size:14px;
-  color:#3a3a3a;
-  line-height:1.8;
-  font-weight:500;
+.hl {
+  background: #f3f4f8;
+  border-radius: 10px;
+  padding: 0.9rem 1rem;
 }
 
-.plist{
-  list-style:none;
-  display:flex;
-  flex-direction:column;
-  gap:12px;
-  margin:1rem 0;
+.hl p {
+  font-size: 13.5px;
+  color: #3a3a3a;
+  line-height: 1.8;
+  font-weight: 500;
 }
 
-.plist li{
-  display:flex;
-  align-items:flex-start;
-  gap:10px;
-  font-size:14px;
-  color:#444;
-  line-height:1.8;
+.sub {
+  font-size: 13px;
+  font-weight: 600;
+  color: #222;
+  margin-top: 0.4rem;
 }
 
-.dot{
-  width:6px;
-  height:6px;
-  border-radius:50%;
-  background:#a8a6c9;
-  flex-shrink:0;
-  margin-top:7px;
+.plist {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
-.dot-teal{
-  background:#9bbfb6;
+.plist li {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  font-size: 13px;
+  color: #444;
+  line-height: 1.8;
 }
 
-.sub{
-  font-size:14px;
-  font-weight:600;
-  color:#222;
-  margin:1rem 0 .4rem;
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #a8a6c9;
+  flex-shrink: 0;
+  margin-top: 6px;
 }
 
-.nav{
-  position: fixed;
+.dot-teal {
+  background: #9bbfb6;
+}
+
+.nav {
+  position: sticky;
   bottom: 0;
-  width: 820px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:1rem 1.5rem;
-  border-top:1px solid #eee;
-  background:#fafafa;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.8rem 1rem;
+  border-top: 1px solid #eee;
+  background: #fafafa;
 }
 
-.nbtn{
-  background:#ffffff;
-  border:1px solid #ddd;
-  border-radius:8px;
-  padding:6px 16px;
-  font-size:13px;
-  color:#333;
-  cursor:pointer;
-  transition:all .2s ease;
+.nbtn {
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 6px 14px;
+  font-size: 12px;
+  color: #333;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  transition: all 0.2s ease;
 }
 
-.nbtn:hover{
-  background:#f0f0f0;
+.nbtn:hover {
+  background: #f0f0f0;
 }
 
-.nbtn:disabled{
-  opacity:.3;
-  cursor:default;
+.nbtn:disabled {
+  opacity: 0.3;
+  cursor: default;
 }
 
-.pips{
-  display:flex;
-  gap:6px;
-  align-items:center;
+.pips {
+  display: flex;
+  gap: 5px;
+  align-items: center;
 }
 
-.pip{
-  width:6px;
-  height:6px;
-  border-radius:50%;
-  background:#ddd;
-  transition:all .2s;
+.pip {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #ddd;
+  transition: all 0.2s;
 }
 
-.pip.on{
-  background:#a8a6c9;
+.pip.on {
+  background: #a8a6c9;
+  width: 16px;
+  border-radius: 3px;
 }
 
-.snum{
-  font-size:12px;
-  color:#888;
+.snum {
+  font-size: 11px;
+  color: #888;
 }
 </style>
 
